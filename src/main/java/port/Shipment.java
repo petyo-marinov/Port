@@ -2,7 +2,7 @@ package port;
 
 import java.time.LocalDateTime;
 
-public class Shipment {
+public class Shipment implements Comparable<Shipment>{
 
     private int packageId;
     private int dockId;
@@ -36,5 +36,15 @@ public class Shipment {
 
     public LocalDateTime getShipmentTime() {
         return shipmentTime;
+    }
+
+    @Override
+    public int compareTo(Shipment o) {
+        return this.shipmentTime.compareTo(o.shipmentTime);
+    }
+
+    @Override
+    public String toString() {
+        return "пратка " + packageId + ", кораб " + shipName + ", кран " + craneId + ", дата: " + shipmentTime;
     }
 }

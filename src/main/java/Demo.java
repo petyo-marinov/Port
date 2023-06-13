@@ -1,4 +1,5 @@
 import port.Crane;
+import port.Logger;
 import port.Port;
 import port.ShipProducer;
 
@@ -16,5 +17,8 @@ public class Demo {
         crane2.start();
         Thread.sleep(2000);
         new ShipProducer().start();
+        Logger logger = new Logger();
+        logger.setDaemon(true);
+        logger.start();
     }
 }

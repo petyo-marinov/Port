@@ -100,6 +100,7 @@ public class Port {
     }
 
     private Dock getDockToUnload() throws Exception {
+        Collections.shuffle(docks);
         for(Dock d : docks){
             if(!d.isEmpty() && !d.isNowUnloading()){
                 return d;
